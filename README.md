@@ -4,12 +4,12 @@ filter for post data logging of a http servlet request in a servlet container e.
 
 ## Build
 
-gradle jar
+	gradle jar
 
 ## Install
 
- - copy build/libs/RequestDataLoggerFilter.jar to $CATALINA_HOME/lib
- - edit $CATALINA_HOME/conf/logging.properties:
+ - copy ``build/libs/RequestDataLoggerFilter.jar`` to ``$CATALINA_HOME/lib``
+ - edit ``$CATALINA_HOME/conf/logging.properties``:
 
 	handlers = 6request-dumper.org.apache.juli.FileHandler
 	 
@@ -20,7 +20,7 @@ gradle jar
  	com.infodesire.log.RequestDataLoggerFilter.level = FINEST
  	com.infodesire.log.RequestDataLoggerFilter.handlers = 6request-dumper.org.apache.juli.FileHandler
 
- - edit web.xml of the web app
+ - edit ``web.xml`` of the web app
 ```xml
 	<filter>
 	    <filter-name>requestdatafilter</filter-name>
