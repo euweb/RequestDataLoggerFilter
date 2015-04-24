@@ -22,7 +22,7 @@ gradle jar
 
  - edit web.xml of the web app
 ```xml
-	 <filter>
+	<filter>
 	    <filter-name>requestdatafilter</filter-name>
 	    <filter-class>
 	       com.infodesire.log.RequestDataLoggerFilter 
