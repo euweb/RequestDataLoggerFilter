@@ -21,7 +21,7 @@ gradle jar
  	com.infodesire.log.RequestDataLoggerFilter.handlers = 6request-dumper.org.apache.juli.FileHandler
 
  - edit web.xml of the web app
-
+```xml
 	 <filter>
 	    <filter-name>requestdatafilter</filter-name>
 	    <filter-class>
@@ -32,5 +32,5 @@ gradle jar
 	    <filter-name>requestdatafilter</filter-name>
     	<url-pattern>/rest/*</url-pattern>
 	 </filter-mapping>
- 
+ ```
  
