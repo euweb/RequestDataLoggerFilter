@@ -10,7 +10,7 @@ filter for post data logging of a http servlet request in a servlet container e.
 
  - copy ``build/libs/RequestDataLoggerFilter.jar`` to ``$CATALINA_HOME/lib``
  - edit ``$CATALINA_HOME/conf/logging.properties``:
-
+```
 	handlers = 6request-dumper.org.apache.juli.FileHandler
 	 
  	6request-dumper.org.apache.juli.FileHandler.level = FINEST 
@@ -19,7 +19,7 @@ filter for post data logging of a http servlet request in a servlet container e.
  	6request-dumper.org.apache.juli.FileHandler.formatter = org.apache.juli.VerbatimFormatter
  	com.infodesire.log.RequestDataLoggerFilter.level = FINEST
  	com.infodesire.log.RequestDataLoggerFilter.handlers = 6request-dumper.org.apache.juli.FileHandler
-
+```
  - edit ``web.xml`` of the web app
 ```xml
 	<filter>
