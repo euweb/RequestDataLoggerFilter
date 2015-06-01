@@ -10,13 +10,6 @@ repositories {
 
   mavenCentral()
 
-  // team repo (because it's no public yet)
-  ivy {
-    // there is a lot of legacy to adhere to here:
-    url 'http://edge/s/repository/maven'
-    layout 'pattern' , { artifact '[module]/[type]s/[artifact]-[revision](.[ext])' }
-  }
-  
 }
 
 // In this section you declare the dependencies for your production and test code
