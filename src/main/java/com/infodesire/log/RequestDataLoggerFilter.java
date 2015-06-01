@@ -46,27 +46,21 @@ public class RequestDataLoggerFilter implements Filter {
 
       String requestData = myRequestWrapper.getRequestData();
       String clientIP = myRequestWrapper.getRemoteHost();
+      String method = myRequestWrapper.getMethod();
       String uri = myRequestWrapper.getRequestURI();
 
       Date date = new Date();
       SimpleDateFormat format = new SimpleDateFormat( "dd-MMM-yyyy HH:mm:ss" );
       String dateString = format.format( date );
 
-      log.finer( "= start ===================" );
-      log.finer( "date: " + dateString );
-      log.finer( "client: " + clientIP );
-      log.finer( "url: " + uri );
-      log.finer( "message:" );
-      log.finer( requestData );
-      log.finer( "= end =====================" );
+      String message = "= " + dateString + " ===================\n";
+      message += "client: " + clientIP + "\n";
+      message += "url: " + method + " " + uri + "\n";
+      message += "message:\n";
+      message += requestData + "\n";
+      message += "==========================================\n";
 
-      //      System.out.println( "= start ===================" );
-      //      System.out.println( "date: " + dateString );
-      //      System.out.println( "client: " + clientIP );
-      //      System.out.println( "url: " + uri );
-      //      System.out.println( "message:" );
-      //      System.out.println( requestData );
-      //      System.out.println( "= end =====================" );
+      log.finer( message );
 
       chain.doFilter( myRequestWrapper, response );
     }
